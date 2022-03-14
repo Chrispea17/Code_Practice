@@ -1,10 +1,29 @@
+body {
+    background: black;
+    color: white;
+    max-width: 600px;
+    margin: auto;
+    font-family: Sans-Serif
+}
+
+p {
+    line-height: 1.6;
+}
+
+article + article {
+    margin-top:3rem;
+    padding-top:3rem;
+    border-top: 1px solid #c5c5c5;
+}
 header {
     color: #f1f1f1;
     background: #0f3657;
     padding: 20px;
     text-align:center;
     font-size:18px;
-;
+}
+li {
+    float:left
 }
 h1 {
     padding:5px;
@@ -21,3 +40,5 @@ main {
     font-size: 16px;
 
 }
+
+
