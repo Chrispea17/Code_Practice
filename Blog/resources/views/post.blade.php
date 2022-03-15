@@ -25,7 +25,7 @@
 
 <body>
 <article>
-    <h1><a href = "/post">My First Post</a></h1>
-    <p>She sells sea shells on the sea shore, the shells she sells are sea shells I'm sure, so if she sells sea shells on the sea shore, I'm sure she sells sea shore shells.</p>
+<?= $post;?>
 </article>
+<a href="/">All posts</a>
 </body>
