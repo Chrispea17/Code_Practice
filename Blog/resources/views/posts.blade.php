@@ -25,17 +25,17 @@
 
 <body>
 <article>
-    <h1><a href = "/post">My First Post</a></h1>
+    <h1><a href = "/posts/my-first-post">My First Post</a></h1>
     <p>She sells sea shells on the sea shore, the shells she sells are sea shells I'm sure, so if she sells sea shells on the sea shore, I'm sure she sells sea shore shells.</p>
 </article>
 
 <article>
-    <h1><a href = "/post">My Second Post</a></h1>
+    <h1><a href = "/posts/my-second-post">My Second Post</a></h1>
     <p>She sells other shells on the sea shore, the shells she sells are other shells I'm sure, so if she sells other shells on the sea shore, I'm sure she sells other shore shells.</p>
 </article>
 
 <article>
-    <h1><a href = "/post">My Third Post</a></h1>
+    <h1><a href = "/posts/my-third-post">My Third Post</a></h1>
     <p>She sells other shells on the sea shore, the shells she sells are other shells I'm sure, so if she sells other shells on the sea shore, I'm sure she sells other shore shells.</p>
 </article>
 </body>
