@@ -7,6 +7,25 @@ use Illuminate\Support\Facades\File;
 
 class Post
 {
+    public $title;
+    public $date;
+    public $excerpt;
+    public $body;
+
+    /**
+     * @param $title
+     * @param $date
+     * @param $excerpt
+     * @param $body
+     */
+    public function __construct($title, $date, $excerpt, $body)
+    {
+        $this->title = $title;
+        $this->date = $date;
+        $this->excerpt = $excerpt;
+        $this->body = $body;
+    }
+
     public static function find($slug)
     {
         if (! file_exists($path = resource_path("posts/{$slug}.html"))) {

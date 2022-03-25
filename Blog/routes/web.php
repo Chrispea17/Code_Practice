@@ -15,7 +15,7 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//Home route
 Route::get('/', function () {
     $files = File::files(resource_path("posts/"));
     $documents = [];
@@ -29,7 +29,7 @@ Route::get('/', function () {
 //        'post'=> Post::all()
 //    ]);
 //});
-
+//route to blog post
 Route::get('posts/{post}', function ($slug) {
 
     return view('post', [
