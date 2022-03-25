@@ -18,12 +18,18 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 //Home route
 Route::get('/', function () {
     $files = File::files(resource_path("posts/"));
-    $documents = [];
+    $posts = [];
     foreach ($files as $file) {
-        $documents[] = YamlFrontMatter::parseFile(
+        $documents = YamlFrontMatter::parseFile(
             $file);
+        $posts[] = new Post(
+            $documents->title,
+            $documents->date,
+            $documents->excerpt,
+            $documents->body()
+        );
     }
-    return $documents[1]->title;
+    dd($posts);
 });
     //    return view('posts',[
 //        'post'=> Post::all()
