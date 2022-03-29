@@ -5,9 +5,16 @@
 
 <body>
 
-<?php foreach($posts=Post::all() as $post) : ?>
+<?php foreach($posts as $post) : ?>
 <article>
-<?= $post; ?>
+    <h1>
+        <a href = "/posts/<?= $post->slug?>">
+        <?= $post->title; ?>
+        </a>
+    </h1>
+    <div>
+    <p><?= $post->body; ?></p>
+    </div>
 </article>
 <?php endforeach;?>
 

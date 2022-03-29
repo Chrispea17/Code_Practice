@@ -11,6 +11,7 @@ class Post
     public $date;
     public $excerpt;
     public $body;
+    public $slug;
 
     /**
      * @param $title
@@ -18,12 +19,13 @@ class Post
      * @param $excerpt
      * @param $body
      */
-    public function __construct($title, $date, $excerpt, $body)
+    public function __construct($title, $date, $excerpt, $body, $slug)
     {
         $this->title = $title;
         $this->date = $date;
         $this->excerpt = $excerpt;
         $this->body = $body;
+        $this->slug = $slug;
     }
 
     public static function find($slug)
