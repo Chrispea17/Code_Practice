@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<?php  use App\Models\Post; ?>
-<title> My Blog </title>
-<link rel = "stylesheet" href="/app.css">
-
-<body>
-
-<?php foreach($posts as $post) : ?>
+@extends('layouts')
+@section('content')
+@foreach ($posts as $post)
 <article>
     <h1>
-        <a href = "/posts/<?= $post->slug?>">
-        <?= $post->title; ?>
+        <a href = "/posts/{{$post->slug}}">
+            {{ $post->title; }}
         </a>
     </h1>
     <div>
-    <p><?= $post->body; ?></p>
+        {{ $post->excerpt; }}
     </div>
 </article>
-<?php endforeach;?>
-
-</body>
-
+@endforeach
+@endsection
