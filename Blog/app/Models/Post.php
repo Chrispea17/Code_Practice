@@ -31,27 +31,37 @@ class Post
 
     public static function find($slug)
     {
-        return static::all()->firstwhere('slug',$slug);
+        return static::all()->firstwhere('slug', $slug);
+    }
+
+    public static function findorFail($slug)
+    {
+        $post = static::find($slug);
+
+        if (! $post) {
+            throw new ModelNotFoundException();
+        }
+
     }
 
     public static function all()
     {
         //return cache()->rememberForever('posts.all', function(){
-            return collect(File::files(resource_path("posts/")))->
-            map(function ($file) {
-                return YamlFrontMatter::parseFile($file);
-            })->
-            map(function ($documents) {
-                ;
-                return new Post(
-                    $documents->title,
-                    $documents->date,
-                    $documents->excerpt,
-                    $documents->body(),
-                    $documents->slug
-                );
-                })->
-                sortByDesc('date');
-            //});
-        }
+        return collect(File::files(resource_path("posts/")))->
+        map(function ($file) {
+            return YamlFrontMatter::parseFile($file);
+        })->
+        map(function ($documents) {
+            ;
+            return new Post(
+                $documents->title,
+                $documents->date,
+                $documents->excerpt,
+                $documents->body(),
+                $documents->slug
+            );
+        })->
+        sortByDesc('date');
+        //});
     }
+}
